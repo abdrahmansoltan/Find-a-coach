@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import {
+  CoachesList,
   CoachDetail,
   CoachesRegistration,
   ContactCoach,
   RequestsReceived,
   NotFound,
 } from "./pages";
-import CoachesList from "./pages/Coaches/CoachesList.vue";
 
 const router = createRouter({
   history: createWebHistory(),

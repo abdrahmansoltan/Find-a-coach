@@ -1,6 +1,4 @@
-<template>
-  <ul></ul>
-</template>
+<template>REGISTER</template>
 
 <script>
 export default {};
