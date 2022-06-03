@@ -30,6 +30,12 @@ export default {
   },
 
   async loadCoaches(context, payload) {
+    // first: check if we should fetch now
+    if (!payload.forceRefresh && !context.getters.shouldUpdate) {
+      return;
+    }
+
+    // else
     const response = await fetch(
       `https://find-a-coach-973b8-default-rtdb.firebaseio.com/coaches.json`
     );
@@ -55,5 +61,8 @@ export default {
     }
 
     context.commit("setCoaches", coaches);
+
+    //
+    context.commit("setFetchTimestamp");
   },
 };
