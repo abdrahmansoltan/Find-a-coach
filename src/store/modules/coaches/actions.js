@@ -1,4 +1,5 @@
 export default {
+  // requires token-auth
   async registerCoach(context, data) {
     const userId = context.rootGetters.userId;
     const coachData = {
@@ -9,8 +10,10 @@ export default {
       areas: data.areas,
     };
 
+    // getting token to send it with the requests for authorization
+    const token = context.rootGetters.token;
     const response = await fetch(
-      `https://find-a-coach-973b8-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+      `https://find-a-coach-973b8-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=${token}`,
       {
         method: "PUT",
         body: JSON.stringify(coachData),

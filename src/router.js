@@ -6,6 +6,7 @@ import {
   ContactCoach,
   RequestsReceived,
   NotFound,
+  UserAuth
 } from "./pages";
 
 const router = createRouter({
@@ -23,6 +24,7 @@ const router = createRouter({
     },
     { path: "/register", component: CoachesRegistration },
     { path: "/requests", component: RequestsReceived },
+    { path: "/auth", component: UserAuth },
     { path: "/:notFound(.*)", component: NotFound },
   ],
 });

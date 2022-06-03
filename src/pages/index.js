@@ -4,6 +4,7 @@ import CoachesRegistration from "./Coaches/CoachesRegistration.vue";
 import ContactCoach from "./Requests/ContactCoach.vue";
 import RequestsReceived from "./Requests/RequestsReceived.vue";
 import NotFound from "./NotFound.vue";
+import UserAuth from "./auth/UserAuth.vue";
 
 export {
   CoachDetail,
@@ -12,4 +13,5 @@ export {
   ContactCoach,
   RequestsReceived,
   NotFound,
+  UserAuth
 };

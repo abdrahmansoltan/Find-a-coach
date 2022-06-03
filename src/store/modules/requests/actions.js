@@ -28,11 +28,15 @@ export default {
     context.commit("addRequest", newRequest);
   },
 
+  // requires token-auth
   async fetchRequests(context) {
     // fetching the request from the DB (only to the specified coach)
     const coachId = context.rootGetters.userId;
+
+    // getting token to send it with the requests for authorization
+    const token = context.rootGetters.token;
     const response = await fetch(
-      `https://find-a-coach-973b8-default-rtdb.firebaseio.com//requests/${coachId}.json`
+      `https://find-a-coach-973b8-default-rtdb.firebaseio.com//requests/${coachId}.json?auth=${token}`
     );
     const responseData = await response.json();
 
